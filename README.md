@@ -1,49 +1,43 @@
-<p align="center"><a href="https://gridsome-starter-bootstrap.loke.dev"><img alt="logo" width="200" src="https://gridsome-starter-bootstrap.loke.dev/logo.png" /></a></p>
+# Gridsome Portfolio Starter
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/70d2a5fc-0609-467a-885e-bf9518118042/deploy-status)](https://app.netlify.com/sites/gridsome-starter-bootstrap/deploys)
+A simple portfolio starter theme for Gridsome
 
-# Gridsome starter bootstrap
+![screenshot](https://user-images.githubusercontent.com/4316355/55691365-a2403380-596b-11e9-93be-05b846ec7760.jpg)
 
-This is a starter project for Gridsome that comes with many features out of the box. It utilizes Bootstrap that is well known for powerful styling and layout. Ready to be deployed, automagically imports data to CMS and sets up your /admin page for easy access to edit your content.
+## Demo URL
 
-It is designed to use Netlify, Forestry and Github which all have very fair free tier to their services, so you wont need to pay for monthly subscriptions and costly hosting fees.
+[https://gridsome-portfolio-starter.netlify.com](https://gridsome-portfolio-starter.netlify.com)
 
-### Demo
+## Features
 
-[https://gridsome-starter-bootstrap.loke.dev](https://gridsome-starter-bootstrap.loke.dev)
+- Clean and minimal design
+- [Tailwind CSS v1.0](https://tailwindcss.com) (with PurgeCSS)
+- Scroll to sections using [vue-scrollto](https://github.com/rigor789/vue-scrollto)
+- Blog with markdown content for posts
+- Theme Switcher with Dark Mode
+- Search posts with [Fuse.js](https://fusejs.io) and [vue-fuse](https://github.com/shayneo/vue-fuse)
+- Tags for posts
+- Basic pagination
+- Syntax highlighting with [Shiki](https://shiki.matsu.io) (using [this gridsome plugin](https://gridsome.org/plugins/gridsome-plugin-remark-shiki))
+- 404 Page
+- RSS Feed
+- Sitemap in XML
 
-### Features
+## Installation
 
-This starter project includes some of the latest powerful technologies.
+1. Install Gridsome CLI tool if you don't have it: `npm install --global @gridsome/cli`
+1. Clone the repo: `git clone https://github.com/drehimself/gridsome-portfolio-starter.git`
+1. `cd gridsome-portfolio-starter`
+1. `npm install`
+1. `gridsome develop` to start a local dev server at `http://localhost:8080`
 
-*   **Gridsome -** Vue.js & GraphQL powered framework genrating static files.
-*   **Bootstrap & Bootstrap Vue -** Powerful styling and layout with styled Vue components.
-*   **Sass -** Professional grade CSS extension with many features.
-*   **Forestry.io -** CMS that uses the Github repo for storage.
-*   **Markdown -** Easy and widely used format for writing content.
-*   **Netlify forms -** Netlify forms ready to be used after deployment.
-*   **Google Analytics -** Just add your tracking ID in the config.
-*   **Sitemap generator -** Automatically generates a sitemap.xml file.
+## Notes
 
-### Getting started
-
-The easiest way to get started quick is to use the Forestry button below, which will create a Github repository for you, clone this starter repo and import all data to the CMS. After that is complete, you can just go to [Netlify](https://www.netlify.com/) and connect your newly created project that will set it up for automatic deployment when you commit to the Github repo.
-
-[![Import this project into Forestry](https://camo.githubusercontent.com/2455e97e4e989374a355fb0bea7ad364f2561c92/68747470733a2f2f6173736574732e666f7265737472792e696f2f696d706f72742d746f2d666f7265737472794b2e737667)](https://app.forestry.io/quick-start?repo=LokeCarlsson/gridsome-starter-bootstrap&provider=github&engine=vuepress) 
-
-### Netlify config
-
-Use the following build config for Netlify
-
-Build command: `gridsome build`
-
-Publish directory: `dist`
-
-#### Manually install just the project (without CMS).
-
-If you haven't already installed Gridsome CLI: `npm install --global @gridsome/cli`
-
-1.  `gridsome create my-gridsome-site https://github.com/LokeCarlsson/gridsome-starter-bootstrap.git`
-2.  `cd my-gridsome-site` to open folder
-3.  `yarn dev` to start local dev server at `http://localhost:8080`
-4.  Happy hacking 🎉🙌
+ - Based on my [personal portfolio website](https://andremadarang.com). I wanted to create an open source version with more features.
+ - Check out a [screencast I did](https://www.youtube.com/watch?v=uHo6o1TNQeE) where I go through the process of building my website.
+ - Illustrations from [unDraw](https://undraw.co)
+ - Search is based on [Fuse.js](https://fusejs.io) and [vue-fuse](https://github.com/shayneo/vue-fuse). It only searches the title and summary of posts for now. Some tweaking may be necessary to get it to search to your liking. Check out the fuse documentation for search settings. A `search.json` index file is generated at build time. This happens in `gridsome.server.js`.
+ - Check out these other Gridsome Starters where I got some ideas from:
+    - [Gridsome Starter Blog](https://github.com/gridsome/gridsome-starter-blog)
+    - [Gridsome Starter Bleda](https://github.com/cossssmin/gridsome-starter-bleda)
+    - [Jigsaw Starter Blog](https://jigsaw.tighten.co/docs/starter-templates/) - I got a lot of design inspiration from this starter theme.
