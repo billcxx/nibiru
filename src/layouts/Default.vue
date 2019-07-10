@@ -1,7 +1,7 @@
 <template>
   <div class="layout">
+    <Header/>
     <div id="content-wrapper">
-      <Header/>
       <slot/>
     </div>
     <Footer/>
@@ -22,6 +22,8 @@ export default {
 
 
 <style lang="scss">
+@import '../assets/styles/custom.scss';
+
 body, html {
   height: 100%;
 }
@@ -37,6 +39,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
+  background-color: map-get($theme-colors,accent2);
 }
 
 #content-wrapper {
