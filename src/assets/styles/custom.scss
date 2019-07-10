@@ -1,32 +1,120 @@
-$theme-colors: (
-  blue: #007bff,
-  indigo: #6610f2,
-  purple: #6f42c1,
-  pink: #e83e8c,
-  red: #dc3545,
-  orange: #fd7e14,
-  yellow: #ffc107,
-  green: #28a745,
-  teal: #20c997,
-  cyan: #17a2b8,
-  white: #fff,
-  gray: #6c757d,
-  gray-dark: #343a40,
 
-  primary: #3BBA95,
-  secondary: #6c757d,
-  success: #28a745,
-  info: #17a2b8,
-  warning: #ffc107,
-  danger: #dc3545,
-  light: #f8f9fa,
-  dark: #343a40,
-);
 
-$grid-breakpoints: (
-  xs: 0,
-  sm: 480px,
-  md: 640px,
-  lg: 992px,
-  xl: 1300px
-);
+@import 'libs/vars';
+@import 'libs/functions';
+@import 'libs/mixins';
+@import 'libs/vendor';
+@import 'libs/breakpoints';
+@import 'libs/html-grid';
+@import 'fontawesome-all.min.css';
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,300,100italic,300italic");
+
+
+
+
+
+// Breakpoints.
+
+@include breakpoints((
+  xlarge:   ( 1281px,  1680px ),
+  large:    ( 981px,   1280px ),
+  medium:   ( 737px,   980px  ),
+  small:    ( 481px,   736px  ),
+  xsmall:   ( null,    480px  ),
+));
+
+// Mixins.
+
+@mixin line-icon($bg: _palette(bg), $fg: _palette(fg-bold)) {
+  @include icon;
+  $size: 1px;
+
+  &:before {
+    color: $bg !important;
+    text-shadow:	$size 0 0 $fg,
+            ($size * -1) 0 0 $fg,
+            0 $size 0 $fg,
+            0 ($size * -1) 0 $fg;
+  }
+}
+
+$size-wrapper-pad-tb: 6em;
+$size-wrapper-pad-lr: 3em;
+
+
+
+
+html, body, div, span, applet, object,
+iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
+pre, a, abbr, acronym, address, big, cite,
+code, del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, b,
+u, i, center, dl, dt, dd, ol, ul, li, fieldset,
+form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside,
+canvas, details, embed, figure, figcaption,
+footer, header, hgroup, menu, nav, output, ruby,
+section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+footer {
+  &.major {
+    margin: (_size(element-margin) * 2) 0 0 0;
+  }
+}
+
+#footer {
+  background: _palette(accent2);
+  padding: $size-wrapper-pad-tb 0;
+  text-align: center;
+
+  .icons {
+    .icon {
+      &.alt {
+        @include line-icon(_palette(accent2), _palette(fg-light));
+      }
+    }
+  }
+
+  .copyright {
+    color: _palette(fg-light);
+    font-size: 0.8em;
+    line-height: 1em;
+    margin: 2em 0 0 0;
+    padding: 0;
+    text-align: center;
+
+    li {
+      border-left: solid 1px _palette(border);
+      display: inline-block;
+      list-style: none;
+      margin-left: 1.5em;
+      padding-left: 1.5em;
+
+      &:first-child {
+        border-left: 0;
+        margin-left: 0;
+        padding-left: 0;
+      }
+
+      a {
+        color: inherit;
+      }
+    }
+  }
+}
+
+#footer {
+  padding: $size-wrapper-pad-tb 0;
+}

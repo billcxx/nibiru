@@ -1,5 +1,5 @@
 module.exports = {
-  siteName: 'Gridsome starter bootstrap',
+  siteName: 'Nibiru',
   siteDescription: 'A starter project for Gridsome with Bootstrap and some other useful tools.',
   siteUrl: 'https://gridsome-starter-bootstrap.loke.dev',
   plugins: [

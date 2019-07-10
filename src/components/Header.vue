@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <b-navbar class="p-0" toggleable="md" type="light">
+    <b-navbar class="p-0" toggleable="md" type="dark">
         <b-navbar-brand>
         <g-link class="logo-home logo-desktop" to="/">{{ $static.metaData.siteName }}</g-link>
         <g-link class="logo-home logo–mobile" to="/"><img class="logo-image" alt="logo" src="../assets/images/logo.png"></g-link>
@@ -8,9 +8,15 @@
       <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
       <b-collapse is-nav id="nav_collapse">
         <b-navbar-nav class="ml-auto">
-          <g-link class="nav--link" to="/about">About</g-link>
-          <g-link class="nav--link" to="/blog">Blog</g-link>
-          <g-link class="nav--link" to="/contact">Contact</g-link>
+        <b-nav-item href="About" class="nav--link" right> About </b-nav-item>
+        <b-nav-item-dropdown text="Tutorial" right>
+          <b-dropdown-item href="#">1</b-dropdown-item>
+          <b-dropdown-item href="#">2</b-dropdown-item>
+          <b-dropdown-item href="#">3</b-dropdown-item>
+          <b-dropdown-item href="#">4</b-dropdown-item>
+        </b-nav-item-dropdown>          
+        <b-nav-item href="Contact" right> Contact </b-nav-item>
+
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
@@ -24,8 +30,10 @@ query {
   }
 }
 </static-query>
-
 <style lang="scss">
+@import "../assets/styles/libs/vars"; 
+
+
 nav {
   width: 100%;
   padding-top: 1rem;
@@ -36,6 +44,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+  background-color: map-get($palette,accent2);
 }
 
 .logo-home {
@@ -44,7 +53,8 @@ nav {
   font-weight: bold;
   &:hover {
     text-decoration: none;
-  }
+  };
+  color: map-get($palette,accent1);
 }
 
 .logo-desktop {
@@ -80,4 +90,9 @@ nav {
 .active--exact {
   font-weight: bold;
 }
+
+.navbar-nav .nav-link{
+    color:map-get($palette,accent1);
+}
+
 </style>
